@@ -9,9 +9,9 @@ function db2Setup(dsn, mode) {
  try {
     var tabledef="create table punchin1"+
                  "(name varchar(20) not null,"+
-                  "punchin2 timestamp not null,"+
-                  "punchout2 timestamp not null);";
-    var sampledata="insert into punchin1(name,punchin2,punchout2) values('Saurabh','2019-02-12 00:00:00','2019-02-15 23:59:00'),('Keyur','2019-06-02 00:00:00','2019-06-06 23:59:00');"
+                  "punchin2 int not null,"+
+                  "punchout2 int not null);";
+    var sampledata="insert into punchin1(name,punchin2,punchout2) values('Saurabh','10','20'),('Keyur','11','21');"
     var tabledrop="drop table punchin1;"
     var conn=ibmdb.openSync(dsn);
     if (mode=="setup")
